@@ -1,12 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
-  <display-name>ServletJspProgramming</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+
+
+	<!-- CharcactherEncodingFilter 설정-->
+	<filter>
+		<filter-name>characterEncondingFilter</filter-name>
+		<filter-class>com.mycompany.web.filter.CharacterEncondingFilter</filter-class>
+		<init-param>
+			<param-name>characterEncondingFilter</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>characterEncondingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- <servlet>
+		<servlet-name>dispatcher</servlet-name>
+		 
+		<servlet-class>com.mycompany.web.servlet.DispatcherServlet1</servlet-class>
+		<init-param>
+			<param-name>x</param-name>
+			<param-value>10</param-value>
+		</init-param>
+		<init-param>
+			<param-name>y</param-name>
+			<param-value>20</param-value>
+		</init-param>
+		
+		<servlet-class>com.mycompany.web.servlet.DispatcherServlet2</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/servletContext.xml</param-value>
+		</init-para0m>
+		
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>-->
+	
+	<servlet>
+		<servlet-name>dispatcher6</servlet-name>
+		<servlet-class>com.mycompany.web.servlet.DispatcherServlet6</servlet-class>
+		
+			<init-param>
+				<param-name>x</param-name>
+				<param-value>10</param-value>
+			</init-param>
+			<init-param>
+				<param-name>y</param-name>
+				<param-value>20</param-value>
+			</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
 </web-app>
